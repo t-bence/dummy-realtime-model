@@ -46,7 +46,7 @@ with mlflow.start_run() as run:
         "model",
         python_model=model,
         signature=signature,
-        registered_model_name="bence-toth-catalog.testing.dummy-model"
+        registered_model_name="bence_toth.testing.dummy-model"
     )
 
 # COMMAND ----------
