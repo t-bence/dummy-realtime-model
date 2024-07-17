@@ -32,8 +32,10 @@ model = Model()
 from mlflow.models.signature import infer_signature
 import pandas as pd
 
+X = pd.DataFrame(((0., 1.),), columns=["x", "y"])
+
 signature = infer_signature(
-  pd.DataFrame(((0., 1.),), columns=["x", "y"]),
+  X,
   pd.DataFrame(((0.,),), columns=["prediction"])
 )
 
@@ -46,6 +48,7 @@ with mlflow.start_run() as run:
         "model",
         python_model=model,
         signature=signature,
+        input_example=X,
         registered_model_name="bence_toth.testing.dummy-model"
     )
 
