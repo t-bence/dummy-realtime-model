@@ -1,5 +1,10 @@
 # Databricks notebook source
 # MAGIC %md
+# MAGIC # Create model
+
+# COMMAND ----------
+
+# MAGIC %md
 # MAGIC Let's create a model and register it, so we can serve it from Databricks model serving
 
 # COMMAND ----------
@@ -54,4 +59,15 @@ with mlflow.start_run() as run:
 
 # COMMAND ----------
 
-
+# MAGIC %md
+# MAGIC # Call model
+# MAGIC
+# MAGIC
+# MAGIC ```
+# MAGIC curl \
+# MAGIC   -u token:$DATABRICKS_TOKEN \
+# MAGIC   -X POST \
+# MAGIC   -H "Content-Type: application/json" \
+# MAGIC   -d@data.json \
+# MAGIC   https://adb-3679152566148441.1.azuredatabricks.net/serving-endpoints/bence-dummy-model/invocations
+# MAGIC ```

@@ -1,0 +1,14 @@
+{
+  "dataframe_split": {
+    "columns": [
+      "x",
+      "y"
+    ],
+    "data": [
+      [
+        0,
+        1
+      ]
+    ]
+  }
+}
